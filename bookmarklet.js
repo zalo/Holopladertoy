@@ -16,6 +16,7 @@ setTimeout(async function() {
       s.src = ss[i];
       document.body.appendChild(s);
     }
+    await new Promise(r => setTimeout(r, 1000));
     var holopladertoy = new Holopladertoy();
   }
   holopladertoy.retrieveCalibration();
