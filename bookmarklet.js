@@ -13,7 +13,7 @@ setTimeout(async function() {
     //var i, s, ss = ['/Holoplay.min.js', '/index.js']; // The local testing version...
     for (i = 0; i != ss.length; i++) {
       if (i === 1)
-        await new Promise(r => setTimeout(r, 2000));
+        await new Promise(r => setTimeout(r, 1000));
       s = document.createElement('script');
       s.src = ss[i];
       document.body.appendChild(s);
