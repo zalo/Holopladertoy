@@ -7,6 +7,7 @@ setTimeout(function() {
   var existingStatusView = document.getElementById("statusView");
   if(typeof(existingStatusView) === 'undefined' || existingStatusView === null){
     var i, s, ss = [
+      'https://cdnjs.cloudflare.com/ajax/libs/three.js/r102/three.min.js',
       'https://zalo.github.io/Holopladertoy/holoplay.min.js',
       'https://zalo.github.io/Holopladertoy/index.js'];
     //var i, s, ss = ['/Holoplay.min.js', '/index.js']; // The local testing version...
