@@ -1,10 +1,10 @@
-# [Holopladertoy](javascript:{var s=document.createElement("script");s.src="https://github.com/zalo/Holopladertoy/bookmarklet.js",document.body.appendChild(s);};void(0);)
+# Holopladertoy
 
 A bookmarklet for connecting Shadertoys to your Looking Glass display.
 
-Save <a href="javascript:{var s=document.createElement('script');s.src='https://github.com/zalo/Holopladertoy/bookmarklet.js',document.body.appendChild(s);};void(0);">this bookmarklet</a> to your browser:
+Save <a href="javascript:{var s=document.createElement('script');s.src='https://zalo.github.io/Holopladertoy/bookmarklet.js',document.body.appendChild(s);};void(0);">this bookmarklet</a> to your browser:
 ```
-javascript:{var s=document.createElement("script");s.src="https://github.com/zalo/Holopladertoy/bookmarklet.js",document.body.appendChild(s);};void(0);
+javascript:{var s=document.createElement("script");s.src="https://zalo.github.io/Holopladertoy/bookmarklet.js",document.body.appendChild(s);};void(0);
 ```
 
 ## How it works
