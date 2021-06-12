@@ -31,4 +31,4 @@ class Holopladertoy {
 }
 
 let holopladertoy = new Holopladertoy();
-await holopladertoy.retrieveCalibration();
+holopladertoy.retrieveCalibration();
