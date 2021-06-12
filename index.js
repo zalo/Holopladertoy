@@ -20,7 +20,7 @@ class Holopladertoy {
                 newTilt *= -1;
             }
 
-            console.log(newPitch, newTilt);
+            console.log("Corrected Pitch: "+newPitch+", Corrected Slope: "+newTilt);
 
             // TODO: Replace the variables in the Shadertoy script with these new values
             // Maybe also trigger a cheeky shader recompile for an instant preview
