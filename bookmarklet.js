@@ -3,9 +3,8 @@
 
 // Execute on a delay in-case the body hasn't been constructed yet...
 setTimeout(async function() {
-  // Don't initialize the bookmarklet again if there's already a StatusView
-  var existingStatusView = document.getElementById("statusView");
-  if(typeof(existingStatusView) === 'undefined' || existingStatusView === null){
+  // Don't initialize the bookmarklet again if there's already a Holoplay Instance
+  if (typeof (holopladertoy) === 'undefined' || holopladertoy === null){
     var i, s, ss = [
       'https://cdnjs.cloudflare.com/ajax/libs/three.js/r102/three.min.js',
       'https://zalo.github.io/Holopladertoy/holoplay.min.js',
@@ -17,5 +16,7 @@ setTimeout(async function() {
       s.src = ss[i];
       document.body.appendChild(s);
     }
+    var holopladertoy = new Holopladertoy();
   }
+  holopladertoy.retrieveCalibration();
 }, 100);

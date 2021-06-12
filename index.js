@@ -20,7 +20,19 @@ class Holopladertoy {
         console.log("Corrected Pitch: " + newPitch + ", Corrected Slope: " + newTilt);
 
         // Retrieve the current shader contents through the CodeMirror Instance
-        console.log(gShaderToy.mCodeEditor.doc.getValue());
+        /** @type {string} */
+        let shader = gShaderToy.mCodeEditor.doc.getValue();
+
+        console.log(shader);
+
+        shader = shader.replace(/((const)?\s*float\s*pitch\s*=\s*\-?\s*\d*\s*\.{0,1}\s*\d*\s*\;\s*\n*)((const)?\s*float\s*slope\s*=\s*\-?\s*\d*\s*\.{0,1}\s*\d*\s*\;\s*\n*)((const)?\s*float\s*center\s*=\s*\-?\s*\d*\s*\.{0,1}\s*\d*\s*\;)/g,
+            "const float pitch  = " + newPitch + ";\n" +
+            "const float slope  = " + newTilt  + ";\n" +
+            "const float center = " + this.calibrationData.center.value + ";\n");
+        
+        console.log(shader);
+        
+        gShaderToy.mCodeEditor.doc.setValue(shader);
 
         // TODO: Replace the variables in the Shadertoy script with these new values using setValue()
         // Maybe also trigger a cheeky shader recompile for an instant preview
@@ -31,6 +43,3 @@ class Holopladertoy {
 
     }
 }
-
-let holopladertoy = new Holopladertoy();
-holopladertoy.retrieveCalibration();
