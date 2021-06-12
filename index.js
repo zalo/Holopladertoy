@@ -23,23 +23,13 @@ class Holopladertoy {
         /** @type {string} */
         let shader = gShaderToy.mCodeEditor.doc.getValue();
 
-        console.log(shader);
-
         shader = shader.replace(/((const)?\s*float\s*pitch\s*=\s*\-?\s*\d*\s*\.{0,1}\s*\d*\s*\;\s*\n*)((const)?\s*float\s*slope\s*=\s*\-?\s*\d*\s*\.{0,1}\s*\d*\s*\;\s*\n*)((const)?\s*float\s*center\s*=\s*\-?\s*\d*\s*\.{0,1}\s*\d*\s*\;)/g,
             "\nconst float pitch  = " + newPitch + ";\n" +
             "const float slope  = " + newTilt  + ";\n" +
             "const float center = " + this.calibrationData.center.value + ";\n");
         
-        console.log(shader);
-        
         gShaderToy.mCodeEditor.doc.setValue(shader);
-
-        // TODO: Replace the variables in the Shadertoy script with these new values using setValue()
-        // Maybe also trigger a cheeky shader recompile for an instant preview
-        gShaderToy.UIStartCompiling(true);
-        gShaderToy.mEffect.Compile(true, function(worked) {
-            gShaderToy.UIEndCompiling(true);
-        });
+        gShaderToy.SetShaderFromEditor(true, true)
 
     }
 }
