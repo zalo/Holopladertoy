@@ -1,6 +1,8 @@
 class Holopladertoy {
-    async constructor() {
-        setTimeout(() => {
+    constructor() {}
+
+    async retrieveCalibration() {
+        setTimeout(async () => {
             this.calibrationData = await HoloPlay.Calibration.getCalibration();
 
             console.log(this.calibrationData);
@@ -28,4 +30,5 @@ class Holopladertoy {
     }
 }
 
-new Holopladertoy();
+let holopladertoy = new Holopladertoy();
+await holopladertoy.retrieveCalibration();
