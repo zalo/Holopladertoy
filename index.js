@@ -24,9 +24,9 @@ class Holopladertoy {
         let shader = gShaderToy.mCodeEditor.doc.getValue();
 
         shader = shader.replace(/((const)?\s*float\s*pitch\s*=\s*\-?\s*\d*\s*\.{0,1}\s*\d*\s*\;\s*\n*)((const)?\s*float\s*slope\s*=\s*\-?\s*\d*\s*\.{0,1}\s*\d*\s*\;\s*\n*)((const)?\s*float\s*center\s*=\s*\-?\s*\d*\s*\.{0,1}\s*\d*\s*\;)/g,
-            "\nconst float pitch  = " + newPitch + ";\n" +
+            "\nconst float pitch  =  " + newPitch + ";\n" +
             "const float slope  = " + newTilt  + ";\n" +
-            "const float center = " + this.calibrationData.center.value + ";\n");
+            "const float center =  " + this.calibrationData.center.value + ";");
         
         gShaderToy.mCodeEditor.doc.setValue(shader);
         gShaderToy.SetShaderFromEditor(true, true)
